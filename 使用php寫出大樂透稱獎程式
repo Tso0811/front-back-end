@@ -1,0 +1,88 @@
+<?php
+
+
+echo ("你購買的數字:");
+    $a =array("20","2","8","11","7","3");
+        echo $a[0];
+            echo (" ");
+        echo $a[1];
+            echo (" ");
+        echo $a[2];
+            echo (" ");
+        echo $a[3];
+            echo (" ");
+        echo $a[4];
+            echo (" ");
+        echo $a[5];
+            echo(" ");
+echo ("<br/>");
+
+echo ("抽獎號碼:");
+
+
+$computer[]=array();   //computer為存放電腦選號數字 
+    for ($i=0;$i<6;$i++){
+       $number=rand(1,49); //number為存放隨機數字
+            if (in_array($number,$computer)){
+                $i--;
+            }
+            else {
+                $computer[$i]=$number;
+               
+            }  
+    }
+    echo $computer[0];
+        echo (" ");
+    echo $computer[1];
+        echo (" ");
+    echo $computer[2];
+        echo (" ");
+    echo $computer[3];
+        echo (" "); 
+    echo $computer[4];
+        echo (" "); 
+    echo $computer[5];
+        echo (" "); 
+    echo"<br/>";
+
+   
+    $special[] =array();//special為存放特殊號碼數字
+        for ($i=0;$i<6;$i++){
+            $number=rand(1,49);
+            if (in_array($number,$computer)){
+                $i--;
+            }
+           else {
+                $special[0]=$number;
+               
+                
+
+            }
+            
+            
+        } echo("特別號:". $special[0]);
+        echo "<br/>";
+        echo"--------";
+        echo "<br/>";
+
+        echo"中獎號碼:";
+     for ($i=0;$i<6;$i++){
+        for ($b=0;$b<6;$b++){
+            if ($a[$i]==$computer[$b]){
+                echo  $a[$i]." ";
+                    
+            }
+        }    
+     }
+     echo "<br/>";
+     echo"特別號中獎號碼:";
+     for ($i=0;$i<6;$i++){
+        if ($a[$i]==$special[0]){
+            echo"$a[$i]";
+        }
+     }
+     echo"<br/>";
+     echo"--------";
+     echo "<br/>";
+
+?>
